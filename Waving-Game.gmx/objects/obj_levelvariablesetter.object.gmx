@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.range = 0;
+            <string>
+switch (room_get_name(room)){
+    case "room0" : global.range = 81;
+}
 
-instance_create((room_width/2)+(room_width/3), room_height, obj_arm);
-instance_create(x, y, obj_levelvariablesetter);
-instance_create((room_width/2)+(room_width/3), room_height, obj_arcDrawer);
-
-instance_destroy()
+instance_destroy();
 </string>
           </argument>
         </arguments>

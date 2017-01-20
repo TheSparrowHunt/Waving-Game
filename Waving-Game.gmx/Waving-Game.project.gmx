@@ -19,6 +19,8 @@
       <objects name="gamegeneration">
         <object>objects\obj_arm</object>
         <object>objects\obj_gamegenerator</object>
+        <object>objects\obj_levelvariablesetter</object>
+        <object>objects\obj_arcDrawer</object>
       </objects>
     </objects>
   </objects>

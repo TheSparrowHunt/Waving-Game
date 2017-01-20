@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,13 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.range = 0;
+            <string>xpos = 0;
+ypos = 0;
+xposprevious = 0;
+yposprevious = 0;
 
-instance_create((room_width/2)+(room_width/3), room_height, obj_arm);
-instance_create(x, y, obj_levelvariablesetter);
-instance_create((room_width/2)+(room_width/3), room_height, obj_arcDrawer);
-
-instance_destroy()
+for(i = 0; i &lt; 90; i+= 1){
+    xpos = -sin(degtorad(i))*150.0;
+    ypos = -cos(degtorad(i))*150.0;
+    xposprevious = -sin(degtorad(i-1))*150.0;
+    yposprevious = -cos(degtorad(i-1))*150.0;
+    
+    draw_line_colour(x+xpos, y+ypos, x+xposprevious, y+yposprevious, c_yellow, c_yellow);
+    draw_line_colour(x+xpos+1, y+ypos, x+xposprevious+1, y+yposprevious, c_yellow, c_yellow);
+    draw_line_colour(x+xpos-1, y+ypos, x+xposprevious-1, y+yposprevious, c_yellow, c_yellow);
+    draw_line_colour(x+xpos, y+ypos+1, x+xposprevious, y+yposprevious+1, c_yellow, c_yellow);
+    draw_line_colour(x+xpos, y+ypos-1, x+xposprevious, y+yposprevious-1, c_yellow, c_yellow);
+    draw_line_colour(x+xpos+1, y+ypos+1, x+xposprevious+1, y+yposprevious+1, c_yellow, c_yellow);
+    draw_line_colour(x+xpos-1, y+ypos-1, x+xposprevious-1, y+yposprevious-1, c_yellow, c_yellow);
+}
 </string>
           </argument>
         </arguments>
