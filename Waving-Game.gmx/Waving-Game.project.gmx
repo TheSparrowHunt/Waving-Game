@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\spr_tempArm</sprite>
+    <sprite>sprites\bg_template</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -23,6 +24,7 @@
         <object>objects\obj_arcDrawer</object>
       </objects>
     </objects>
+    <object>objects\obj_background</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
