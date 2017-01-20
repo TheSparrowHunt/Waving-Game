@@ -28,6 +28,10 @@
             <string>global.btnUp = 0;
 global.btnDown = 0;
 global.btnnConfirm = 0;
+
+global.btnUpPressed = 0;
+global.btnDownPressed = 0;
+global.btnConfirmPressed = 0;
 </string>
           </argument>
         </arguments>
@@ -51,8 +55,52 @@ global.btnnConfirm = 0;
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check_pressed(vk_escape)){
-    exit;
+    game_end();
 }
+
+if (keyboard_check(vk_up) || keyboard_check(ord('W'))){
+    global.btnUp = 1;
+}
+else{
+    global.btnUp = 0;
+}
+
+if (keyboard_check(vk_down) || keyboard_check(ord('S'))){
+    global.btnDown = 1;
+}
+else{
+    global.btnDown = 0;
+}
+
+if (keyboard_check(vk_space) || keyboard_check(vk_enter)){
+    global.btnConfirm = 1;
+}
+else{
+    global.btnConfirm = 0;
+}
+
+if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord('W'))){
+    global.btnUpPressed = 1;
+}
+else{
+    global.btnUpPressed = 0;
+}
+
+if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord('S'))){
+    global.btnDownPressed = 1;
+}
+else{
+    global.btnDownPressed = 0;
+}
+
+if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
+    global.btnConfirmPressed = 1;
+}
+else{
+    global.btnConfirmedPressed = 0;
+}
+
+
 </string>
           </argument>
         </arguments>

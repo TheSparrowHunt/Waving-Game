@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_test0" x="160" y="64" name="inst_44643008" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_singleton_creator" x="288" y="96" name="inst_103909B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -12,8 +12,10 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_test0</object>
-    <object>objects\obj_control</object>
-    <object>objects\obj_singleton_creator</object>
+    <objects name="control">
+      <object>objects\obj_control</object>
+      <object>objects\obj_singleton_creator</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
