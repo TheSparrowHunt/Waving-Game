@@ -52,10 +52,10 @@ deltadeltaspeed = 0;
             <kind>1</kind>
             <string>if (global.btnUp ^^ global.btnDown){
     if (global.btnUp){
-        deltadeltaspeed -= 0.125;
+        deltadeltaspeed -= 0.0225;
     }
     else if (global.btnDown){
-        deltadeltaspeed += 0.125;
+        deltadeltaspeed += 0.0225;
     }
     
 }
@@ -65,16 +65,35 @@ else{
         deltaspeed -= sign(deltaspeed);
     }
     else if (abs(deltaspeed) &lt; 1 &amp;&amp; abs(deltaspeed) &gt; 0){
-        deltaspeed = 0;
+        if (angle &gt;= 30 &amp;&amp; angle &lt;= 60){
+        deltaspeed += random(0.01)-0.005;
+        }
+        //deltaspeed = 0;
     }
     
 }
 
+
+
+if (angle &lt;= 90 &amp;&amp; angle &gt; 0){
+    angle += deltaspeed;
+    
+}
+else{
+    instance_create(x, y, obj_gamegenerator);
+    instance_destroy();
+    deltaspeed = 0;
+    deltadeltaspeed = 0;
+}
+
+
 deltaspeed += deltadeltaspeed;
 
-angle += deltaspeed;
+if (abs(deltaspeed) &gt; 2){
+    deltaspeed = 2*sign(deltaspeed);
+}
 
-deltaspeed -= deltaspeed/10;
+deltaspeed -= deltaspeed/25;
 
 image_angle = angle;
 </string>
