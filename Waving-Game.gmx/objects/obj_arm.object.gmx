@@ -28,6 +28,8 @@
             <string>angle = 45;
 deltaspeed = 0;
 deltadeltaspeed = 0;
+state = 0;
+grav = 0;
 </string>
           </argument>
         </arguments>
@@ -50,50 +52,56 @@ deltadeltaspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.btnUp ^^ global.btnDown){
-    if (global.btnUp){
-        deltadeltaspeed -= 0.0225;
-    }
-    else if (global.btnDown){
-        deltadeltaspeed += 0.0225;
-    }
-    
-}
-else{
-    deltadeltaspeed = 0;
-    if (abs(deltaspeed) &gt; 1){
-        deltaspeed -= sign(deltaspeed);
-    }
-    else if (abs(deltaspeed) &lt; 1 &amp;&amp; abs(deltaspeed) &gt; 0){
-        if (angle &gt;= 30 &amp;&amp; angle &lt;= 60){
-        deltaspeed += random(0.01)-0.005;
+            <string>if (state == 0){
+    if (global.btnUp ^^ global.btnDown){
+            if (global.btnUp){
+            deltadeltaspeed -= 0.0225;
         }
-        //deltaspeed = 0;
+        else if (global.btnDown){
+            deltadeltaspeed += 0.0225;
+        }
+    
     }
+    else{
+        deltadeltaspeed = 0;
+        if (abs(deltaspeed) &gt; 1){
+            deltaspeed -= sign(deltaspeed);
+        }
+        else if (abs(deltaspeed) &lt; 1 &amp;&amp; abs(deltaspeed) &gt; 0){
+            if (angle &gt;= 30 &amp;&amp; angle &lt;= 60){
+            deltaspeed += random(0.01)-0.005;
+            }
+            //deltaspeed = 0;
+        }
     
+    }
+
+
+
+    if (angle &lt;= 90 &amp;&amp; angle &gt; 0){
+        angle += deltaspeed;
+    }
+    else{
+        state = 1;
+    }
+
+
+    deltaspeed += deltadeltaspeed;
+
+    if (abs(deltaspeed) &gt; 2){
+        deltaspeed = 2*sign(deltaspeed);
+    }
+
+    deltaspeed -= deltaspeed/25;
 }
-
-
-
-if (angle &lt;= 90 &amp;&amp; angle &gt; 0){
+else if (state == 1){
+    grav += 1;
+    y+= grav;
+    
+    deltadeltaspeed += 0.5;
+    deltaspeed += deltadeltaspeed;
     angle += deltaspeed;
-    
 }
-else{
-    instance_create(x, y, obj_gamegenerator);
-    instance_destroy();
-    deltaspeed = 0;
-    deltadeltaspeed = 0;
-}
-
-
-deltaspeed += deltadeltaspeed;
-
-if (abs(deltaspeed) &gt; 2){
-    deltaspeed = 2*sign(deltaspeed);
-}
-
-deltaspeed -= deltaspeed/25;
 
 image_angle = angle;
 </string>

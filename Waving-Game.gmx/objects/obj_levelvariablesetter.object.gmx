@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>
 switch (room_get_name(room)){
-    case "room0" : global.range = 81;
+    case "room0" : global.range = 45;
 }
 
 instance_destroy();
