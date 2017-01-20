@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\spr_tempArm</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -15,6 +16,10 @@
     <objects name="control">
       <object>objects\obj_control</object>
       <object>objects\obj_singleton_creator</object>
+      <objects name="gamegeneration">
+        <object>objects\obj_arm</object>
+        <object>objects\obj_gamegenerator</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
