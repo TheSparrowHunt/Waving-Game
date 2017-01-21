@@ -25,12 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 88;
+            <string>x = 100;
 y = 51;
 
-for(i = 0; i &lt; 8; i++){
+for(i = 0; i &lt; 7; i++){
     for(j = 0; j &lt; 4; j++){
-        instance_create(x+(i*18), y + (j*18), obj_crowdmember);
+        instance_create(x+(i*18)+(j*(i-3)*4), y + (j*18), obj_crowdmember);
         }
     }
     instance_destroy();
