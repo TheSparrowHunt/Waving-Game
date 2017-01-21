@@ -58,14 +58,14 @@ global.btnConfirmPressed = 0;
     game_end();
 }
 
-if (keyboard_check(vk_right) || keyboard_check(ord('D')) || gamepad_button_check(0, gp_padr)){
+if (keyboard_check(vk_right) || keyboard_check(ord('D')) || gamepad_button_check(0, gp_padr) || gamepad_button_check(0, gp_shoulderrb)){
     global.btnUp = 1;
 }
 else{
     global.btnUp = 0;
 }
 
-if (keyboard_check(vk_left) || keyboard_check(ord('A')) || gamepad_button_check(0, gp_padl)){
+if (keyboard_check(vk_left) || keyboard_check(ord('A')) || gamepad_button_check(0, gp_padl) || gamepad_button_check(0, gp_shoulderlb)){
     global.btnDown = 1;
 }
 else{
