@@ -103,7 +103,7 @@ if (state == 0){
      if (changer &lt; 0){
         changer = 0;
      }else if (changer &gt; 0.1){
-        changer = 0.1;
+        changer = 0.175;
      }
      deltaspeed += sign(deltaspeed)*changer;
      
@@ -127,7 +127,7 @@ if (state == 0){
     if (angle &lt; 90-(0.5*(global.range)) &amp;&amp; angle &gt; (0.5*global.range)){
     
         if (abs(deltaspeed) &gt; 0.2){
-            if (abs(deltadeltaspeed) &gt; 0.3){
+            if (abs(deltadeltaspeed) &gt; 0.325){
                 global.levelscore++;
                 global.winning = 1;
             }
