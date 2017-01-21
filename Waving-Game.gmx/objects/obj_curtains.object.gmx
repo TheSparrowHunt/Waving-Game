@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,17 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shakelevel = 0;
-
-winningmapped = 0;
-
-bottomofbar = room_height-40;
-topofbar = 40;
-leftofbar = (room_width/2)+(room_width/3)+10;
-rightofbar = (room_width/2)+(room_width/3)+30;
-
-global.curtains = 0;
-
+            <string>/*
+    0 = not started
+    1 = first moving
+    2 = finished first
+    3 = moving to center
+    4 = finished moving to center
+    
+*/
+curtainsState = 0;
+curtainleft = 0;
+curtainright = room_width/2;
+cspeed = 3;
 </string>
           </argument>
         </arguments>
@@ -58,64 +59,42 @@ global.curtains = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>percentageWinning = global.levelscore/global.winthreshold
-if (global.gamestate != 2){
-   if (percentageWinning &lt; 0){
-    percentageWinning = 0;
-    }
-    shakevalue = random(percentageWinning)-(0.5*percentageWinning);
-    view_angle[0] = round(shakevalue*5); 
-}
-else{
-    view_angle[0] = 0;
-}
-
-if (global.gamestate != 2){
-    if (global.levelscore &gt;= global.winthreshold){
-        global.gamestate = 2;
-    }
-}
-else{
-
-    if (instance_number(obj_win) &lt; 1){
-        instance_create(room_width/2, room_height/2, obj_win);
-    }
-    //TODO
-    if (global.btnConfirmPressed == 1){
-        global.curtains = 1;
-        
-    }
-}
-
-/*if (curtainsmoved == 0){
-    if (curtainleftx &lt; room_width/2){
-        curtainleftx -= 1;
-        curtainrightx += 1;
-    }
-    else{
-        curtainsmoved = 1;
-    }
-}
-else{
-    if (global.gamestate == 2){
-        if (instance_number(obj_win) &lt; 1){
-            instance_create(room_width/2, room_height/2, obj_win);
-            }
-        if (curtainleftx &gt; 0){
-            curtainleftx += 1;
-            curtainrightx -= 1;
+            <string>switch(curtainsState){
+    case 0 : 
+        curtainsState = 1;
+        break;
+    case 1 :
+        if (curtainleft &gt;= -room_width/2){
+            curtainleft -= cspeed;
+            curtainright += cspeed;
         }
         else{
-            //TODO
-            if (global.btnConfirmPressed == 1){
-                switch(room_get_name(room)){
+            curtainsState = 2;
+        }
+        break;
+    case 2 : if(global.curtains == 1){curtainsState = 3} break;
+    case 3 : 
+        if (curtainleft &lt;= 0){
+            curtainleft += cspeed;
+            curtainright -= cspeed;
+        }
+        else{
+            global.curtains = 0;
+            curtainsState = 4;               
+        }
+        break;
+    case 4: 
+        switch(room_get_name(room)){
                     case "room0" : room_goto(room1); break;
                     case "room1" : room_goto(room0); break;
-                }
-            }
         }
-    }
-}*/
+        curtainsState = 0;
+        break;
+}
+
+if (room_get_name(room) == menu){
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -138,17 +117,8 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>winningmapped = round(100*global.levelscore/global.winthreshold);
-
-draw_set_colour(global.green);
-    draw_rectangle(leftofbar, bottomofbar-winningmapped, rightofbar, bottomofbar, false);
-
-
-draw_set_colour(global.red)
-    draw_rectangle(leftofbar, topofbar, rightofbar, bottomofbar, true);
-
-//draw_sprite(spr_curtainleft, 0, curtainleftx, 0);
-//draw_sprite(spr_curtainright, 0, curtainrightx, 0);
+            <string>draw_sprite(spr_curtainleft, 0, curtainleft, 0);
+draw_sprite(spr_curtainright, 0, curtainright, 0);
 </string>
           </argument>
         </arguments>

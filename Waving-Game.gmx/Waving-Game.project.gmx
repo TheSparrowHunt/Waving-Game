@@ -64,6 +64,7 @@
         <object>objects\obj_levelvariablesetter</object>
         <object>objects\obj_arcDrawer</object>
         <object>objects\obj_levelmanager</object>
+        <object>objects\obj_curtains</object>
       </objects>
     </objects>
     <object>objects\obj_background</object>
