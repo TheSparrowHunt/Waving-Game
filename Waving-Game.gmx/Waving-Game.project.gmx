@@ -26,8 +26,12 @@
     <sprite>sprites\spr_title12</sprite>
     <sprite>sprites\spr_title13</sprite>
     <sprite>sprites\spr_title14</sprite>
+    <sprite>sprites\spr_curtainleft</sprite>
+    <sprite>sprites\spr_curtainright</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <objects name="title">
