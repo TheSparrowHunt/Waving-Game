@@ -8,6 +8,31 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>size = 0;
+maxsize = 150;
+wobbler = 0.25;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -30,11 +55,11 @@ ypos = 0;
 xposprevious = 0;
 yposprevious = 0;
 
-for(i = 0; i &lt; 90; i+= 3){
-    xpos = -sin(degtorad(i))*100.0;
-    ypos = -cos(degtorad(i))*100.0;
-    xposprevious = -sin(degtorad(i-3))*100.0;
-    yposprevious = -cos(degtorad(i-3))*100.0;
+for(i = 0; i &lt; 90; i+= 5){
+    xpos = -sin(degtorad(i))*size;
+    ypos = -cos(degtorad(i))*size;
+    xposprevious = -sin(degtorad(i-5))*size;
+    yposprevious = -cos(degtorad(i-5))*size;
     if (i &lt; 90-(0.5*(global.range)) &amp;&amp; i &gt; (0.5*global.range)){
         draw_line_colour(x+xpos, y+ypos, x+xposprevious, y+yposprevious, c_yellow, c_yellow);
         draw_line_colour(x+xpos+1, y+ypos, x+xposprevious+1, y+yposprevious, c_yellow, c_yellow);
@@ -53,6 +78,17 @@ for(i = 0; i &lt; 90; i+= 3){
         draw_line_colour(x+xpos+1, y+ypos+1, x+xposprevious+1, y+yposprevious+1, c_red, c_red);
         draw_line_colour(x+xpos-1, y+ypos-1, x+xposprevious-1, y+yposprevious-1, c_red, c_red);
     }
+}
+
+if (size &lt; maxsize-5){
+    size+= 2.5;
+}
+else {
+
+    if(size &lt;= maxsize-5 || size &gt;= maxsize+5){
+        wobbler = -wobbler;
+    }
+    size+= wobbler;
 }
 </string>
           </argument>
