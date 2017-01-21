@@ -56,11 +56,17 @@ rightofbar = (room_width/2)+(room_width/3)+30;
           <argument>
             <kind>1</kind>
             <string>percentageWinning = global.levelscore/global.winthreshold
-if (percentageWinning &lt; 0){
+if (global.gamestate != 2){
+   if (percentageWinning &lt; 0){
     percentageWinning = 0;
+    }
+    shakevalue = random(percentageWinning)-(0.5*percentageWinning);
+    view_angle[0] = round(shakevalue*5); 
 }
-shakevalue = random(percentageWinning)-(0.5*percentageWinning);
-view_angle[0] = round(shakevalue*5);
+else{
+    view_angle[0] = 0;
+}
+
 if (global.gamestate != 2){
     if (global.levelscore &gt;= global.winthreshold){
         global.gamestate = 2;
@@ -103,7 +109,7 @@ draw_set_colour(global.green);
     draw_rectangle(leftofbar, bottomofbar-winningmapped, rightofbar, bottomofbar, false);
 
 
-draw_set_colour(global.black)
+draw_set_colour(global.red)
     draw_rectangle(leftofbar, topofbar, rightofbar, bottomofbar, true);
 
 </string>
