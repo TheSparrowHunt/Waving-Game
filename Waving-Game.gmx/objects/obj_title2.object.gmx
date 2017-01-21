@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>counter = 0;
 colstate = 0;
+rand = 4+irandom(15);
 </string>
           </argument>
         </arguments>
@@ -49,7 +50,7 @@ colstate = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (counter%4 == 0){
+            <string>if (counter%rand == 0){
     if (colstate &lt; 6){
         colstate++;
     }
