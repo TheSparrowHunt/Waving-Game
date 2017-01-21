@@ -31,6 +31,13 @@ deltadeltaspeed = 0;
 state = 0;
 grav = 0;
 fallstate = 0;
+switch(irandom(4)){
+    case 0: colour = global.purple; break;
+    case 1: colour = global.pink; break;
+    case 2: colour = global.blue; break;
+    case 3: colour = global.teal; break;
+    case 4: colour = global.green; break;
+}
 </string>
           </argument>
         </arguments>
@@ -83,8 +90,8 @@ fallstate = 0;
     changer = 0.1*(0.05+((global.levelscore*(global.levelscore/(0.5*global.winthreshold)))+1)/global.winthreshold);
      if (changer &lt; 0){
         changer = 0;
-     }else if (changer &gt; 0.175){
-        changer = 0.175;
+     }else if (changer &gt; 0.15){
+        changer = 0.15;
      }
      deltaspeed += sign(deltaspeed)*changer;
      
@@ -108,7 +115,7 @@ fallstate = 0;
     
     
     //SCORE
-    if (abs(deltaspeed) &gt; 0.1){
+    if (abs(deltaspeed) &gt; 0.2){
         if (angle &lt; 90-(0.5*(global.range)) &amp;&amp; angle &gt; (0.5*global.range)){
             global.levelscore++;
         }
@@ -142,6 +149,10 @@ else if (state == 1){
         with(obj_arcDrawer){
             instance_destroy();
         }
+        with(obj_levelmanager){
+            instance_destroy();
+        }
+        
         instance_create(x, y, obj_gamegenerator);
         instance_destroy();
     }
@@ -176,7 +187,8 @@ image_angle = angle;
             <string>draw_set_font(global.Font0);
 draw_text(room_width/2, room_height/5, global.levelscore);
 draw_text(room_width/2, 20+room_height/5, deltaspeed);
-draw_self();
+draw_sprite_ext(spr_tempArm, 0, x, y, 1, 1, angle, colour, 1);
+//draw_self();
 
 
 </string>

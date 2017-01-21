@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>size = 0;
-maxsize = 150;
+maxsize = 145;
 wobbler = 0.25;
 </string>
           </argument>
@@ -61,22 +61,22 @@ for(i = 0; i &lt; 90; i+= 5){
     xposprevious = -sin(degtorad(i-5))*size;
     yposprevious = -cos(degtorad(i-5))*size;
     if (i &lt; 90-(0.5*(global.range)) &amp;&amp; i &gt; (0.5*global.range)){
-        draw_line_colour(x+xpos, y+ypos, x+xposprevious, y+yposprevious, c_yellow, c_yellow);
-        draw_line_colour(x+xpos+1, y+ypos, x+xposprevious+1, y+yposprevious, c_yellow, c_yellow);
-        draw_line_colour(x+xpos-1, y+ypos, x+xposprevious-1, y+yposprevious, c_yellow, c_yellow);
-        draw_line_colour(x+xpos, y+ypos+1, x+xposprevious, y+yposprevious+1, c_yellow, c_yellow);
-        draw_line_colour(x+xpos, y+ypos-1, x+xposprevious, y+yposprevious-1, c_yellow, c_yellow);
-        draw_line_colour(x+xpos+1, y+ypos+1, x+xposprevious+1, y+yposprevious+1, c_yellow, c_yellow);
-        draw_line_colour(x+xpos-1, y+ypos-1, x+xposprevious-1, y+yposprevious-1, c_yellow, c_yellow);
+        draw_line_colour(x+xpos, y+ypos, x+xposprevious, y+yposprevious, global.yellow, global.yellow);
+        draw_line_colour(x+xpos+1, y+ypos, x+xposprevious+1, y+yposprevious, global.yellow, global.yellow);
+        draw_line_colour(x+xpos-1, y+ypos, x+xposprevious-1, y+yposprevious, global.yellow, global.yellow);
+        draw_line_colour(x+xpos, y+ypos+1, x+xposprevious, y+yposprevious+1, global.yellow, global.yellow);
+        draw_line_colour(x+xpos, y+ypos-1, x+xposprevious, y+yposprevious-1, global.yellow, global.yellow);
+        draw_line_colour(x+xpos+1, y+ypos+1, x+xposprevious+1, y+yposprevious+1, global.yellow, global.yellow);
+        draw_line_colour(x+xpos-1, y+ypos-1, x+xposprevious-1, y+yposprevious-1, global.yellow, global.yellow);
     }
     else{
-        draw_line_colour(x+xpos, y+ypos, x+xposprevious, y+yposprevious, c_red, c_red);
-        draw_line_colour(x+xpos+1, y+ypos, x+xposprevious+1, y+yposprevious, c_red, c_red);
-        draw_line_colour(x+xpos-1, y+ypos, x+xposprevious-1, y+yposprevious, c_red, c_red);
-        draw_line_colour(x+xpos, y+ypos+1, x+xposprevious, y+yposprevious+1, c_red, c_red);
-        draw_line_colour(x+xpos, y+ypos-1, x+xposprevious, y+yposprevious-1, c_red, c_red);
-        draw_line_colour(x+xpos+1, y+ypos+1, x+xposprevious+1, y+yposprevious+1, c_red, c_red);
-        draw_line_colour(x+xpos-1, y+ypos-1, x+xposprevious-1, y+yposprevious-1, c_red, c_red);
+        draw_line_colour(x+xpos, y+ypos, x+xposprevious, y+yposprevious, global.red, global.red);
+        draw_line_colour(x+xpos+1, y+ypos, x+xposprevious+1, y+yposprevious, global.red, global.red);
+        draw_line_colour(x+xpos-1, y+ypos, x+xposprevious-1, y+yposprevious, global.red, global.red);
+        draw_line_colour(x+xpos, y+ypos+1, x+xposprevious, y+yposprevious+1, global.red, global.red);
+        draw_line_colour(x+xpos, y+ypos-1, x+xposprevious, y+yposprevious-1, global.red, global.red);
+        draw_line_colour(x+xpos+1, y+ypos+1, x+xposprevious+1, y+yposprevious+1, global.red, global.red);
+        draw_line_colour(x+xpos-1, y+ypos-1, x+xposprevious-1, y+yposprevious-1, global.red, global.red);
     }
 }
 

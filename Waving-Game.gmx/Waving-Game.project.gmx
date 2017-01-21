@@ -23,6 +23,7 @@
         <object>objects\obj_gamegenerator</object>
         <object>objects\obj_levelvariablesetter</object>
         <object>objects\obj_arcDrawer</object>
+        <object>objects\obj_levelmanager</object>
       </objects>
     </objects>
     <object>objects\obj_background</object>

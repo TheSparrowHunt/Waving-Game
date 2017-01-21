@@ -25,19 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x, y, obj_control);
-global.Font0 = font_add_sprite(spr_font, 32, true, 1);
-global.purple = make_colour_rgb(118, 66, 138);
-global.pink = make_colour_rgb(215, 123, 186);
-global.blue = make_colour_rgb(91, 110, 225);
-global.teal = make_colour_rgb(99, 155, 255);
-global.green = make_colour_rgb(106, 190, 48);
-global.red = make_colour_rgb(172, 50, 50);
-global.yellow = make_colour_rgb(251, 242, 54);
-
-instance_destroy();
-
-
+            <string>shakelevel = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>percentageWinning = global.levelscore/global.winthreshold
+if (percentageWinning &lt; 0){
+    percentageWinning = 0;
+}
+shakevalue = random(percentageWinning)-(0.5*percentageWinning);
+view_angle[0] = round(shakevalue*5);
 </string>
           </argument>
         </arguments>
