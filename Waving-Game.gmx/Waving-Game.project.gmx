@@ -29,6 +29,8 @@
     <sprite>sprites\spr_curtainleft</sprite>
     <sprite>sprites\spr_curtainright</sprite>
     <sprite>sprites\spr_background</sprite>
+    <sprite>sprites\spr_crowdangry</sprite>
+    <sprite>sprites\spr_crowdhappy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
