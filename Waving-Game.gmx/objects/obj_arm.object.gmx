@@ -60,7 +60,9 @@ switch(irandom(4)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state == 0){
+            <string>if (global.gamestate != 2){
+
+if (state == 0){
     
     if (global.btnUp ^^ global.btnDown){
             if (global.btnUp){
@@ -162,6 +164,8 @@ else if (state == 1){
 }
 
 image_angle = angle;
+
+}
 </string>
           </argument>
         </arguments>

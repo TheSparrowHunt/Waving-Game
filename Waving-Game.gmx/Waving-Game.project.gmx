@@ -10,6 +10,7 @@
     <sprite>sprites\spr_tempArm</sprite>
     <sprite>sprites\bg_template</sprite>
     <sprite>sprites\spr_font</sprite>
+    <sprite>sprites\spr_win</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,6 +28,7 @@
       </objects>
     </objects>
     <object>objects\obj_background</object>
+    <object>objects\obj_win</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

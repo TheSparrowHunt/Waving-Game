@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,14 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shakelevel = 0;
+            <string>colstate = 0;
+counter = 0;
+angle = 0;
+angleincrementer = 2;
 
-winningmapped = 0;
 
-bottomofbar = room_height-40;
-topofbar = 40;
-leftofbar = (room_width/2)+(room_width/3)+10;
-rightofbar = (room_width/2)+(room_width/3)+30;
 </string>
           </argument>
         </arguments>
@@ -55,21 +53,23 @@ rightofbar = (room_width/2)+(room_width/3)+30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>percentageWinning = global.levelscore/global.winthreshold
-if (percentageWinning &lt; 0){
-    percentageWinning = 0;
-}
-shakevalue = random(percentageWinning)-(0.5*percentageWinning);
-view_angle[0] = round(shakevalue*5);
-if (global.gamestate != 2){
-    if (global.levelscore &gt;= global.winthreshold){
-        global.gamestate = 2;
+            <string>if (counter%4 == 0){
+    if (colstate &lt; 6){
+        colstate++;
+    }
+    else{
+        colstate = 0;
     }
 }
-else{
-    if (instance_number(obj_win) &lt; 1){
-        instance_create(room_width/2, room_height/2, obj_win);
-    }
+
+counter++;
+if (angle &gt; 30 || angle &lt; -30){
+    angleincrementer = -angleincrementer;
+}
+angle+= angleincrementer;
+
+if (instance_number(obj_win )&lt;10){
+    instance_create(x, y, obj_win);
 }
 </string>
           </argument>
@@ -93,15 +93,16 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>winningmapped = round(100*global.levelscore/global.winthreshold);
-
-draw_set_colour(global.green);
-    draw_rectangle(leftofbar, bottomofbar-winningmapped, rightofbar, bottomofbar, false);
-
-
-draw_set_colour(global.black)
-    draw_rectangle(leftofbar, topofbar, rightofbar, bottomofbar, true);
-
+            <string>switch (colstate){
+    case 0: col = (global.purple); break;
+    case 1: col = (global.pink); break;
+    case 2: col = (global.blue); break;
+    case 3: col = (global.teal); break;
+    case 4: col = (global.green); break;
+    case 5: col = (global.red); break;
+    case 6: col = (global.yellow); break;
+}
+draw_sprite_ext(spr_win, 0, x, y, 1, 1, angle, col, 1);
 </string>
           </argument>
         </arguments>

@@ -28,7 +28,7 @@
             <string>
 switch (room_get_name(room)){
     case "room0" : 
-        global.range = 90-30; 
+        global.range = 90-45; 
         global.winthreshold = 1000;
         break;
         
