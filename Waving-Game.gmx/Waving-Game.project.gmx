@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sound0</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\spr_tempArm</sprite>
@@ -69,6 +71,8 @@
     </objects>
     <object>objects\obj_background</object>
     <object>objects\obj_win</object>
+    <object>objects\obj_crowdmember</object>
+    <object>objects\obj_crowdmanager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

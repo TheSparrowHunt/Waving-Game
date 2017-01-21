@@ -74,7 +74,7 @@ if (state == 0){
     if (global.btnUp ^^ global.btnDown){
             if (global.btnUp){
                 if (deltaspeed &gt;= 0.2){
-                    deltadeltaspeed -= 0.027;
+                    deltadeltaspeed -= 0.032;
                 }
                 else{
                     deltadeltaspeed -= 0.0225;
@@ -82,7 +82,7 @@ if (state == 0){
         }
         else if (global.btnDown){
             if (deltaspeed &lt;= -0.2){
-                deltadeltaspeed += 0.027;
+                deltadeltaspeed += 0.032;
             }
             else{
                 deltadeltaspeed += 0.0225;
@@ -177,7 +177,9 @@ else if (state == 1){
         with(obj_levelmanager){
             instance_destroy();
         }
-        
+        with(obj_crowdmember){
+            instance_destroy();
+        }
         instance_create(x, y, obj_gamegenerator);
         instance_destroy();
     }

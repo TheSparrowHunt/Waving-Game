@@ -25,23 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.range = 0;
-global.gamestate = 0;
-global.levelscore = 0;
+            <string>x = 88;
+y = 51;
 
-instance_create((room_width/2)+(room_width/3), room_height, obj_arm);
-instance_create(x, y, obj_levelvariablesetter);
-if (instance_number(obj_arcDrawer) &lt; 1){
-    instance_create((room_width/2)+(room_width/3), room_height, obj_arcDrawer);
-}
-
-instance_create(x, y, obj_levelmanager);
-
-if (instance_number(obj_curtains) &lt; 1){
-    instance_create(x, y, obj_curtains);
-}
-instance_create(x, y, obj_crowdmanager);
-instance_destroy()
+for(i = 0; i &lt; 8; i++){
+    for(j = 0; j &lt; 4; j++){
+        instance_create(x+(i*18), y + (j*18), obj_crowdmember);
+        }
+    }
+    instance_destroy();
 </string>
           </argument>
         </arguments>
