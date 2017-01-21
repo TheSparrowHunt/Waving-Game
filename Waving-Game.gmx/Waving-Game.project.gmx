@@ -11,10 +11,39 @@
     <sprite>sprites\bg_template</sprite>
     <sprite>sprites\spr_font</sprite>
     <sprite>sprites\spr_win</sprite>
+    <sprite>sprites\spr_title0</sprite>
+    <sprite>sprites\spr_title1</sprite>
+    <sprite>sprites\spr_title2</sprite>
+    <sprite>sprites\spr_title3</sprite>
+    <sprite>sprites\spr_title4</sprite>
+    <sprite>sprites\spr_title5</sprite>
+    <sprite>sprites\spr_title6</sprite>
+    <sprite>sprites\spr_title7</sprite>
+    <sprite>sprites\spr_title8</sprite>
+    <sprite>sprites\spr_title9</sprite>
+    <sprite>sprites\spr_title10</sprite>
+    <sprite>sprites\spr_title11</sprite>
+    <sprite>sprites\spr_title12</sprite>
+    <sprite>sprites\spr_title13</sprite>
+    <sprite>sprites\spr_title14</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
+    <objects name="title">
+      <object>objects\obj_title0</object>
+      <object>objects\obj_title1</object>
+      <object>objects\obj_title2</object>
+      <object>objects\obj_title3</object>
+      <object>objects\obj_title4</object>
+      <object>objects\obj_title6</object>
+      <object>objects\obj_title7</object>
+      <object>objects\obj_title8</object>
+      <object>objects\obj_title9</object>
+      <object>objects\obj_title10</object>
+      <object>objects\obj_title11</object>
+      <object>objects\obj_title12</object>
+    </objects>
     <object>objects\obj_test0</object>
     <objects name="control">
       <object>objects\obj_control</object>
