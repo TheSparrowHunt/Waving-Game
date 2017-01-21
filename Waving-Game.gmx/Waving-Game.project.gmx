@@ -28,6 +28,7 @@
     <sprite>sprites\spr_title14</sprite>
     <sprite>sprites\spr_curtainleft</sprite>
     <sprite>sprites\spr_curtainright</sprite>
+    <sprite>sprites\spr_background</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
