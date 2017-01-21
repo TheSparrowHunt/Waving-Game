@@ -33,6 +33,10 @@ bottomofbar = room_height-40;
 topofbar = 40;
 leftofbar = (room_width/2)+(room_width/3)+10;
 rightofbar = (room_width/2)+(room_width/3)+30;
+
+curtainsmoved = 0;
+curtainleftx = 0;
+curtainrightx = 0;
 </string>
           </argument>
         </arguments>
@@ -73,6 +77,7 @@ if (global.gamestate != 2){
     }
 }
 else{
+
     if (instance_number(obj_win) &lt; 1){
         instance_create(room_width/2, room_height/2, obj_win);
     }
@@ -84,6 +89,36 @@ else{
         }
     }
 }
+
+/*if (curtainsmoved == 0){
+    if (curtainleftx &lt; room_width/2){
+        curtainleftx -= 1;
+        curtainrightx += 1;
+    }
+    else{
+        curtainsmoved = 1;
+    }
+}
+else{
+    if (global.gamestate == 2){
+        if (instance_number(obj_win) &lt; 1){
+            instance_create(room_width/2, room_height/2, obj_win);
+            }
+        if (curtainleftx &gt; 0){
+            curtainleftx += 1;
+            curtainrightx -= 1;
+        }
+        else{
+            //TODO
+            if (global.btnConfirmPressed == 1){
+                switch(room_get_name(room)){
+                    case "room0" : room_goto(room1); break;
+                    case "room1" : room_goto(room0); break;
+                }
+            }
+        }
+    }
+}*/
 </string>
           </argument>
         </arguments>
@@ -115,6 +150,8 @@ draw_set_colour(global.green);
 draw_set_colour(global.red)
     draw_rectangle(leftofbar, topofbar, rightofbar, bottomofbar, true);
 
+//draw_sprite(spr_curtainleft, 0, curtainleftx, 0);
+//draw_sprite(spr_curtainright, 0, curtainrightx, 0);
 </string>
           </argument>
         </arguments>

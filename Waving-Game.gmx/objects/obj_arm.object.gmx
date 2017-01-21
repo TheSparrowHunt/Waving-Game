@@ -111,11 +111,6 @@ if (state == 0){
         state = 1;
     }
     
-    
-
-
-    
-    
     //SCORE
     if (abs(deltaspeed) &gt; 0.2){
         if (angle &lt; 90-(0.5*(global.range)) &amp;&amp; angle &gt; (0.5*global.range)){
