@@ -54,6 +54,7 @@ fallstate = 0;
           <argument>
             <kind>1</kind>
             <string>if (state == 0){
+    
     if (global.btnUp ^^ global.btnDown){
             if (global.btnUp){
             deltadeltaspeed -= 0.0225;
@@ -65,8 +66,8 @@ fallstate = 0;
     }
     else{
         deltadeltaspeed = 0;
-        if (abs(deltaspeed) &gt; 1){
-            deltaspeed -= sign(deltaspeed);
+        if (abs(deltaspeed) &gt; 0.1){
+            deltaspeed -= 0.1*deltaspeed;
         }
         else if (abs(deltaspeed) &lt; 1 &amp;&amp; abs(deltaspeed) &gt; 0){
             if (angle &gt;= 30 &amp;&amp; angle &lt;= 60){
@@ -77,7 +78,21 @@ fallstate = 0;
     
     }
 
-
+    
+    
+    changer = 0.1*(0.05+((global.levelscore*(global.levelscore/(0.5*global.winthreshold)))+1)/global.winthreshold);
+     if (changer &lt; 0){
+        changer = 0;
+     }else if (changer &gt; 0.175){
+        changer = 0.175;
+     }
+     deltaspeed += sign(deltaspeed)*changer;
+     
+     deltaspeed += deltadeltaspeed;
+     deltaspeed -= (deltaspeed/25);
+     if (abs(deltaspeed) &gt; 2){
+        deltaspeed = 2*sign(deltaspeed);
+    }     
 
     if (angle &lt;= 90 &amp;&amp; angle &gt; 0){
         angle += deltaspeed;
@@ -86,15 +101,24 @@ fallstate = 0;
         global.gamestate = 1;
         state = 1;
     }
+    
+    
 
 
-    deltaspeed += deltadeltaspeed;
-
-    if (abs(deltaspeed) &gt; 2){
-        deltaspeed = 2*sign(deltaspeed);
+    
+    
+    //SCORE
+    if (abs(deltaspeed) &gt; 0.1){
+        if (angle &lt; 90-(0.5*(global.range)) &amp;&amp; angle &gt; (0.5*global.range)){
+            global.levelscore++;
+        }
+        else{
+            global.levelscore-=2;
+        }
     }
-
-    deltaspeed -= deltaspeed/25;
+    
+    
+     
 }
 else if (state == 1){
     if (fallstate == 0){
@@ -111,6 +135,8 @@ else if (state == 1){
         grav += 1;
     }
     y+= grav;
+    
+    
     if (y &gt; room_height+1000){
         global.gamestate = 2;
         with(obj_arcDrawer){
@@ -125,6 +151,34 @@ else if (state == 1){
 }
 
 image_angle = angle;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_font(global.Font0);
+draw_text(room_width/2, room_height/5, global.levelscore);
+draw_text(room_width/2, 20+room_height/5, deltaspeed);
+draw_self();
+
+
 </string>
           </argument>
         </arguments>

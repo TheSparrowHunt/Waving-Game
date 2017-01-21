@@ -26,8 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>instance_create(x, y, obj_control);
+global.Font0 = font_add_sprite(spr_font, 32, true, 1);
 
 instance_destroy();
+
+
 </string>
           </argument>
         </arguments>
