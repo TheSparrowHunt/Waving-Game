@@ -31,6 +31,11 @@ deltadeltaspeed = 0;
 state = 0;
 grav = 0;
 fallstate = 0;
+
+counter = 0;
+colstate = 0;
+rand = 10+irandom(15);
+
 switch(irandom(4)){
     case 0: colour = global.purple; break;
     case 1: colour = global.pink; break;
@@ -38,6 +43,8 @@ switch(irandom(4)){
     case 3: colour = global.teal; break;
     case 4: colour = global.green; break;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -182,6 +189,17 @@ else if (state == 1){
 image_angle = angle;
 
 }
+
+/*if (counter%rand == 0){
+    if (colstate &lt; 6){
+        colstate++;
+    }
+    else{
+        colstate = 0;
+    }
+}
+
+counter++;*/
 </string>
           </argument>
         </arguments>
@@ -208,6 +226,17 @@ image_angle = angle;
 draw_set_colour(global.red);
 draw_text(room_width/2, (room_height/5)-10, deltadeltaspeed);
 draw_text(room_width/2, room_height/5, deltaspeed);
+
+/*switch (colstate){
+    case 0: colour = (global.purple); break;
+    case 1: colour = (global.pink); break;
+    case 2: colour = (global.blue); break;
+    case 3: colour = (global.teal); break;
+    case 4: colour = (global.green); break;
+    case 5: colour = (global.red); break;
+    case 6: colour = (global.yellow); break;
+}*/
+
 draw_sprite_ext(spr_tempArm, 0, x, y, 1, 1, angle, colour, 1);
 //draw_self();
 
