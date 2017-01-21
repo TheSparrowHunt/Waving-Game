@@ -33,9 +33,11 @@
     <sprite>sprites\spr_background</sprite>
     <sprite>sprites\spr_crowdangry</sprite>
     <sprite>sprites\spr_crowdhappy</sprite>
-    <sprite>sprites\spr_backgroundchurch</sprite>
-    <sprite>sprites\spr_backgroundpark</sprite>
-    <sprite>sprites\spr_backgroundtown</sprite>
+    <sprite>sprites\spr_background2</sprite>
+    <sprite>sprites\spr_background3</sprite>
+    <sprite>sprites\spr_background4</sprite>
+    <sprite>sprites\sprite31</sprite>
+    <sprite>sprites\spr_background5</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
