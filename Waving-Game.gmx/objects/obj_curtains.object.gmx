@@ -36,7 +36,7 @@
 curtainsState = 0;
 curtainleft = 0;
 curtainright = room_width/2;
-cspeed = 3;
+cspeed = 4;
 </string>
           </argument>
         </arguments>
@@ -85,8 +85,10 @@ cspeed = 3;
         break;
     case 4: 
         switch(room_get_name(room)){
-                    case "room0" : room_goto(room1); break;
-                    case "room1" : room_goto(room0); break;
+            case "room0" : room_goto(room1); break;
+            case "room1" : room_goto(room2); break;
+            case "room2" : room_goto(room3); break;
+            case "room3" : room_goto(room0); break;
         }
         curtainsState = 0;
         break;

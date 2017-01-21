@@ -66,10 +66,20 @@ if (state == 0){
     
     if (global.btnUp ^^ global.btnDown){
             if (global.btnUp){
-            deltadeltaspeed -= 0.0225;
+                if (deltaspeed &gt;= 0.2){
+                    deltadeltaspeed -= 0.027;
+                }
+                else{
+                    deltadeltaspeed -= 0.0225;
+                }
         }
         else if (global.btnDown){
-            deltadeltaspeed += 0.0225;
+            if (deltaspeed &lt;= -0.2){
+                deltadeltaspeed += 0.027;
+            }
+            else{
+                deltadeltaspeed += 0.0225;
+            }
         }
     
     }
@@ -92,13 +102,15 @@ if (state == 0){
     changer = 0.1*(0.05+((global.levelscore*(global.levelscore/(0.5*global.winthreshold)))+1)/global.winthreshold);
      if (changer &lt; 0){
         changer = 0;
-     }else if (changer &gt; 0.15){
-        changer = 0.15;
+     }else if (changer &gt; 0.1){
+        changer = 0.1;
      }
      deltaspeed += sign(deltaspeed)*changer;
      
      deltaspeed += deltadeltaspeed;
+     
      deltaspeed -= (deltaspeed/25);
+     
      if (abs(deltaspeed) &gt; 2){
         deltaspeed = 2*sign(deltaspeed);
     }     
@@ -143,9 +155,7 @@ else if (state == 1){
     
     if (y &gt; room_height+1000){
         global.gamestate = 2;
-        with(obj_arcDrawer){
-            instance_destroy();
-        }
+        
         with(obj_levelmanager){
             instance_destroy();
         }
@@ -185,7 +195,8 @@ image_angle = angle;
             <kind>1</kind>
             <string>draw_set_font(global.Font0);
 draw_set_colour(global.red);
-draw_text(room_width/2, room_height/5, room_get_name(room));
+draw_text(room_width/2, (room_height/5)-10, deltadeltaspeed);
+draw_text(room_width/2, room_height/5, deltaspeed);
 draw_sprite_ext(spr_tempArm, 0, x, y, 1, 1, angle, colour, 1);
 //draw_self();
 

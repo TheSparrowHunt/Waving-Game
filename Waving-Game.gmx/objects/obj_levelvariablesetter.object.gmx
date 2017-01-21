@@ -35,6 +35,14 @@ switch (room_get_name(room)){
         global.range = 90-70;
         global.winthreshold = 1000;
         break;
+    case "room2" :
+        global.range = 90-60;
+        global.winthreshold = 900;
+        break;
+    case "room3" :
+        global.range = 90-50;
+        global.winthreshold = 800;
+        break;
         
 }
 

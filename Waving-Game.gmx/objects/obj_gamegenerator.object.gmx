@@ -31,7 +31,10 @@ global.levelscore = 0;
 
 instance_create((room_width/2)+(room_width/3), room_height, obj_arm);
 instance_create(x, y, obj_levelvariablesetter);
-instance_create((room_width/2)+(room_width/3), room_height, obj_arcDrawer);
+if (instance_number(obj_arcDrawer) &lt; 1){
+    instance_create((room_width/2)+(room_width/3), room_height, obj_arcDrawer);
+}
+
 instance_create(x, y, obj_levelmanager);
 
 if (instance_number(obj_curtains) &lt; 1){
