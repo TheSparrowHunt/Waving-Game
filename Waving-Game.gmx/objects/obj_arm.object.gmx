@@ -124,13 +124,24 @@ if (state == 0){
     }
     
     //SCORE
-    if (abs(deltaspeed) &gt; 0.2){
-        if (angle &lt; 90-(0.5*(global.range)) &amp;&amp; angle &gt; (0.5*global.range)){
-            global.levelscore++;
+    if (angle &lt; 90-(0.5*(global.range)) &amp;&amp; angle &gt; (0.5*global.range)){
+    
+        if (abs(deltaspeed) &gt; 0.2){
+            if (abs(deltadeltaspeed) &gt; 0.3){
+                global.levelscore++;
+                global.winning = 1;
+            }
+            else{
+                global.winning = 0;
+            }
+        }
+        else{
+                global.winning = 0;
+        }
         }
         else{
             global.levelscore-=2;
-        }
+            global.winning = -1;
     }
     
     

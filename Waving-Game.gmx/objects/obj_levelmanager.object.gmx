@@ -28,11 +28,16 @@
             <string>shakelevel = 0;
 
 winningmapped = 0;
+oldwinningmapped = 0;
 
 bottomofbar = room_height-40;
 topofbar = 40;
 leftofbar = (room_width/2)+(room_width/3)+10;
 rightofbar = (room_width/2)+(room_width/3)+30;
+
+for ( i = 0; i &lt; 30; i++){
+    previousscore[i] = 0;
+}
 
 global.curtains = 0;
 
@@ -58,13 +63,13 @@ global.curtains = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>percentageWinning = global.levelscore/global.winthreshold
+            <string>percentageWinning = global.levelscore/global.winthreshold;
 if (global.gamestate != 2){
    if (percentageWinning &lt; 0){
-    percentageWinning = 0;
+        percentageWinning = 0;
     }
     shakevalue = random(percentageWinning)-(0.5*percentageWinning);
-    view_angle[0] = round(shakevalue*5); 
+    view_angle[0] = round(shakevalue*5);
 }
 else{
     view_angle[0] = 0;
@@ -116,6 +121,16 @@ else{
         }
     }
 }*/
+
+for ( i = 0; i &lt; 30; i++){
+    if (i == 0){
+        previousscore[0] = global.levelscore;
+    }
+    else{
+        previousscore[i] = 0;
+    }
+    
+}
 </string>
           </argument>
         </arguments>
@@ -139,12 +154,25 @@ else{
           <argument>
             <kind>1</kind>
             <string>winningmapped = round(100*global.levelscore/global.winthreshold);
+oldwinningmapped = round(100*previousscore[29]/global.winthreshold);
 
-draw_set_colour(global.green);
-    draw_rectangle(leftofbar, bottomofbar-winningmapped, rightofbar, bottomofbar, false);
+if (global.winning == -1){
+    draw_set_colour(global.red)
+}
+else if (global.winning == 0){
+    draw_set_colour(global.yellow);
+}
+else{
+    draw_set_colour(global.green);
+}
 
 
-draw_set_colour(global.red)
+draw_rectangle(leftofbar, bottomofbar-winningmapped, rightofbar, bottomofbar, false);
+
+
+    
+draw_set_colour(global.blue)
+    
     draw_rectangle(leftofbar, topofbar, rightofbar, bottomofbar, true);
 
 //draw_sprite(spr_curtainleft, 0, curtainleftx, 0);
