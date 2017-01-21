@@ -65,11 +65,11 @@ global.curtains = 0;
             <kind>1</kind>
             <string>percentageWinning = global.levelscore/global.winthreshold;
 if (global.gamestate != 2){
-   if (percentageWinning &lt; 0){
+   if (percentageWinning &lt; 0.75){
         percentageWinning = 0;
     }
     shakevalue = random(percentageWinning)-(0.5*percentageWinning);
-    view_angle[0] = round(shakevalue*5);
+    view_angle[0] = round(shakevalue*3);
 }
 else{
     view_angle[0] = 0;

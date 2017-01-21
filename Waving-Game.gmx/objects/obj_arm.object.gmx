@@ -224,12 +224,7 @@ counter++;*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(global.Font0);
-draw_set_colour(global.red);
-draw_text(room_width/2, (room_height/5)-10, deltadeltaspeed);
-draw_text(room_width/2, room_height/5, deltaspeed);
-
-/*switch (colstate){
+            <string>/*switch (colstate){
     case 0: colour = (global.purple); break;
     case 1: colour = (global.pink); break;
     case 2: colour = (global.blue); break;
@@ -241,8 +236,11 @@ draw_text(room_width/2, room_height/5, deltaspeed);
 
 draw_sprite_ext(spr_tempArm, 0, x, y, 1, 1, angle, colour, 1);
 //draw_self();
-
-
+//DEBUG
+/*draw_set_font(global.Font0);
+draw_set_colour(global.red);
+draw_text(room_width/2, (room_height/5)-10, deltadeltaspeed);
+draw_text(room_width/2, room_height/5, deltaspeed);*/
 </string>
           </argument>
         </arguments>
