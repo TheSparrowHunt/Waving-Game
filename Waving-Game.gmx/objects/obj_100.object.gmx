@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,18 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-    0 = not started
-    1 = first moving
-    2 = finished first
-    3 = moving to center
-    4 = finished moving to center
-    
-*/
-curtainsState = 0;
-curtainleft = 0;
-curtainright = room_width/2;
-cspeed = 4;
+            <string>colstate = 0;
+counter = 0;
+angle = 0;
+angleincrementer = 2;
+
+xchange = 0.2+random(5.8)-3;
+ychange = 0.2+random(5.8)-3;
 </string>
           </argument>
         </arguments>
@@ -59,45 +54,30 @@ cspeed = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch(curtainsState){
-    case 0 : 
-        curtainsState = 1;
-        break;
-    case 1 :
-        if (curtainleft &gt;= -room_width/2){
-            curtainleft -= cspeed;
-            curtainright += cspeed;
-        }
-        else{
-            curtainsState = 2;
-        }
-        break;
-    case 2 : if(global.curtains == 1){curtainsState = 3} break;
-    case 3 : 
-        if (curtainleft &lt;= 0){
-            curtainleft += cspeed;
-            curtainright -= cspeed;
-        }
-        else{
-            global.curtains = 0;
-            curtainsState = 4;               
-        }
-        break;
-    case 4: 
-        switch(room_get_name(room)){
-            case "room0" : room_goto(room1); break;
-            case "room1" : room_goto(room2); break;
-            case "room2" : room_goto(room3); break;
-            case "room3" : room_goto(room4); break;
-            case "room4" : room_goto(room_win); break;
-        }
-        curtainsState = 0;
-        break;
+            <string>if (counter%(4+irandom(7)) == 0){
+    if (colstate &lt; 6){
+        colstate++;
+    }
+    else{
+        colstate = 0;
+    }
 }
 
-if (room_get_name(room) == menu){
+counter++;
+if (angle &gt; 30 || angle &lt; -30){
+    angleincrementer = -angleincrementer;
+}
+angle+= angleincrementer;
+
+
+
+if (x &gt; room_width+(sprite_get_width(0)/2) || x &lt; 0-(sprite_get_width(0)/2) || y &gt; room_height+(sprite_get_height(0)/2) || y &lt; 0-(sprite_get_height(0)/2) ){
     instance_destroy();
 }
+
+x += xchange;
+y += ychange;
+
 </string>
           </argument>
         </arguments>
@@ -120,8 +100,16 @@ if (room_get_name(room) == menu){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_curtainleft, 0, curtainleft, 0);
-draw_sprite(spr_curtainright, 0, curtainright, 0);
+            <string>switch (colstate){
+    case 0: col = (global.purple); break;
+    case 1: col = (global.pink); break;
+    case 2: col = (global.blue); break;
+    case 3: col = (global.teal); break;
+    case 4: col = (global.green); break;
+    case 5: col = (global.red); break;
+    case 6: col = (global.yellow); break;
+}
+draw_sprite_ext(spr_100, 0, x, y, 1, 1, angle, col, 1);
 </string>
           </argument>
         </arguments>

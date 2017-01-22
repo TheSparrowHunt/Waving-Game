@@ -71,6 +71,7 @@ angle+= angleincrementer;
 if (instance_number(obj_win )&lt;10){
     instance_create(x, y, obj_win);
 }
+
 </string>
           </argument>
         </arguments>
@@ -103,6 +104,8 @@ if (instance_number(obj_win )&lt;10){
     case 6: col = (global.yellow); break;
 }
 draw_sprite_ext(spr_win, 0, x, y, 1, 1, angle, col, 1);
+
+
 </string>
           </argument>
         </arguments>

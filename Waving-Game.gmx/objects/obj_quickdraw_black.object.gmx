@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,79 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-    0 = not started
-    1 = first moving
-    2 = finished first
-    3 = moving to center
-    4 = finished moving to center
-    
-*/
-curtainsState = 0;
-curtainleft = 0;
-curtainright = room_width/2;
-cspeed = 4;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>switch(curtainsState){
-    case 0 : 
-        curtainsState = 1;
-        break;
-    case 1 :
-        if (curtainleft &gt;= -room_width/2){
-            curtainleft -= cspeed;
-            curtainright += cspeed;
-        }
-        else{
-            curtainsState = 2;
-        }
-        break;
-    case 2 : if(global.curtains == 1){curtainsState = 3} break;
-    case 3 : 
-        if (curtainleft &lt;= 0){
-            curtainleft += cspeed;
-            curtainright -= cspeed;
-        }
-        else{
-            global.curtains = 0;
-            curtainsState = 4;               
-        }
-        break;
-    case 4: 
-        switch(room_get_name(room)){
-            case "room0" : room_goto(room1); break;
-            case "room1" : room_goto(room2); break;
-            case "room2" : room_goto(room3); break;
-            case "room3" : room_goto(room4); break;
-            case "room4" : room_goto(room_win); break;
-        }
-        curtainsState = 0;
-        break;
-}
-
-if (room_get_name(room) == menu){
-    instance_destroy();
-}
+            <string>counter = 0;
 </string>
           </argument>
         </arguments>
@@ -120,8 +48,9 @@ if (room_get_name(room) == menu){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_curtainleft, 0, curtainleft, 0);
-draw_sprite(spr_curtainright, 0, curtainright, 0);
+            <string>if (counter &lt; 40){
+    draw_rectangle_colour(0, 0, room_width, room_height, global.black, global.black, global.black, global.black, false);
+}
 </string>
           </argument>
         </arguments>

@@ -40,6 +40,11 @@
     </sprites>
     <sprite>sprites\sprite31</sprite>
     <sprite>sprites\spr_background5</sprite>
+    <sprites name="win_room">
+      <sprite>sprites\spr_best</sprite>
+      <sprite>sprites\spr_aect</sprite>
+      <sprite>sprites\spr_100</sprite>
+    </sprites>
     <sprite>sprites\sprite30</sprite>
     <sprite>sprites\spr_howto</sprite>
   </sprites>
@@ -81,6 +86,10 @@
     </objects>
     <object>objects\obj_background</object>
     <object>objects\obj_win</object>
+    <objects name="win">
+      <object>objects\obj_100</object>
+      <object>objects\obj_completeroomcontrol</object>
+    </objects>
     <objects name="utility">
       <object>objects\obj_screenresizer</object>
       <object>objects\obj_totalinitialiser</object>
@@ -89,6 +98,7 @@
     </objects>
     <object>objects\obj_crowdmember</object>
     <object>objects\obj_crowdmanager</object>
+    <object>objects\obj_quickdraw_black</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\blank</room>
