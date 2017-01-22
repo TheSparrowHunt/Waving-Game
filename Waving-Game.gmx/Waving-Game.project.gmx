@@ -47,6 +47,7 @@
     </sprites>
     <sprite>sprites\sprite30</sprite>
     <sprite>sprites\spr_howto</sprite>
+    <sprite>sprites\sprite32</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
