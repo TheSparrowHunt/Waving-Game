@@ -41,6 +41,13 @@ for ( i = 0; i &lt; 30; i++){
 
 global.curtains = 0;
 
+if(audio_is_playing(snd_menu_music)){
+    audio_sound_gain(snd_menu_music, 0, 10);
+}
+
+if (!audio_is_playing(snd_game_music)){
+    audio_play_sound(snd_game_music, 1, true);
+}
 </string>
           </argument>
         </arguments>
@@ -130,6 +137,10 @@ for ( i = 0; i &lt; 30; i++){
         previousscore[i] = 0;
     }
     
+}
+
+if(audio_is_playing(snd_menu_music) &amp;&amp; audio_sound_get_gain(snd_menu_music) &lt;= 0){
+    audio_stop_sound(snd_menu_music);
 }
 </string>
           </argument>

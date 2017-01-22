@@ -5,7 +5,10 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\sound0</sound>
+    <sound>sound\snd_menu_music</sound>
+    <sound>sound\snd_game_music</sound>
+    <sound>sound\snd_lose</sound>
+    <sound>sound\snd_win</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -80,9 +83,11 @@
       <object>objects\obj_screenresizer</object>
       <object>objects\obj_totalinitialiser</object>
       <object>objects\obj_pretotalinitialiser</object>
+      <object>objects\obj_volumechange</object>
     </objects>
     <object>objects\obj_crowdmember</object>
     <object>objects\obj_crowdmanager</object>
+    <object>objects\object30</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\blank</room>
@@ -96,6 +101,10 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
+  <audiogroups name="audiogroups">
+    <audiogroup name="audiogroup_default"/>
+    <audiogroup name="audio_main"/>
+  </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>
     <TutorialName></TutorialName>

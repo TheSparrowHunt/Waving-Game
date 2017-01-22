@@ -89,12 +89,14 @@ if (menuposition == 2){
         if (global.volume &lt;= 90){
             global.volume += 10;
             //change volume
+            instance_create(x, y, obj_volumechange);
         }
     }
     else if (global.menuleft == 1){
         if (global.volume &gt;= 10){
             global.volume -= 10; 
             //change volume
+            instance_create(x, y, obj_volumechange);
         }
     }
 }

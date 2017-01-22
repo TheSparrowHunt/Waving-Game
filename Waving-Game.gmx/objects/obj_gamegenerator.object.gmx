@@ -29,6 +29,9 @@
 global.gamestate = 0;
 global.levelscore = 0;
 
+
+
+
 instance_create((room_width/2)+(room_width/3), room_height, obj_arm);
 instance_create(x, y, obj_levelvariablesetter);
 if (instance_number(obj_arcDrawer) &lt; 1){

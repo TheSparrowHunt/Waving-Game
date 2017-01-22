@@ -27,6 +27,37 @@
             <kind>1</kind>
             <string>menuposition = 0;
 menusize = 3;
+
+if(audio_is_playing(snd_game_music)){
+    audio_sound_gain(snd_game_music, 0, 10);
+}
+
+alarm[0] = 7;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!audio_is_playing(snd_menu_music)){
+    audio_play_sound(snd_menu_music, 1, true);
+}
 </string>
           </argument>
         </arguments>
@@ -74,6 +105,10 @@ if (global.btnConfirmPressed == 1){
         case 3: game_end(); break;
     }
 }
+
+if(audio_is_playing(snd_game_music) &amp;&amp; audio_sound_get_gain(snd_game_music) &lt;= 0){
+    audio_stop_sound(snd_game_music);
+}
 </string>
           </argument>
         </arguments>
@@ -101,33 +136,35 @@ if (global.btnConfirmPressed == 1){
 draw_set_halign(fa_center);
 //top
 if (menuposition == 0){
-    draw_text_colour(room_width/2, (room_height/2)+12+17, "start", global.white, global.white, global.white, global.white, 1);
+    draw_text_colour(room_width/2, (room_height/2)+5, "start", global.white, global.white, global.white, global.white, 1);
 }
 else{
-    draw_text_colour(room_width/2, (room_height/2)+12+17, "start", global.white, global.white, global.white, global.white, 0.3);
+    draw_text_colour(room_width/2, (room_height/2)+5, "start", global.white, global.white, global.white, global.white, 0.3);
 }
 
 if (menuposition == 1){
-    draw_text_colour(room_width/2, (room_height/2)+12+34, "how to play", global.white, global.white, global.white, global.white, 1);
+    draw_text_colour(room_width/2, (room_height/2)+16, "how to play", global.white, global.white, global.white, global.white, 1);
 }
 else{
-    draw_text_colour(room_width/2, (room_height/2)+12+34, "how to play", global.white, global.white, global.white, global.white, 0.3);
+    draw_text_colour(room_width/2, (room_height/2)+16, "how to play", global.white, global.white, global.white, global.white, 0.3);
 }
 
 if (menuposition == 2){
-    draw_text_colour(room_width/2, (room_height/2)+12+51, "settings", global.white, global.white, global.white, global.white, 1);
+    draw_text_colour(room_width/2, (room_height/2)+27, "settings", global.white, global.white, global.white, global.white, 1);
 }
 else{
-    draw_text_colour(room_width/2, (room_height/2)+12+51, "settings", global.white, global.white, global.white, global.white, 0.3);
+    draw_text_colour(room_width/2, (room_height/2)+27, "settings", global.white, global.white, global.white, global.white, 0.3);
 }
 
 if (menuposition == 3){
-    draw_text_colour(room_width/2, (room_height/2)+12+68, "exit", global.white, global.white, global.white, global.white, 1);
+    draw_text_colour(room_width/2, (room_height/2)+38, "exit", global.white, global.white, global.white, global.white, 1);
 }
 else{
-    draw_text_colour(room_width/2, (room_height/2)+12+68, "exit", global.white, global.white, global.white, global.white, 0.3);
+    draw_text_colour(room_width/2, (room_height/2)+38, "exit", global.white, global.white, global.white, global.white, 0.3);
 }
 
+draw_text_colour(room_width/2, room_height-21, "a global game jam 2017 game", global.white, global.white, global.white, global.white, 1);
+draw_text_colour(room_width/2, room_height-10, "Alice Casey - @Fir3sparkle and Jake Sparrow-Hunter - @TheSparrowHunt", global.white, global.white, global.white, global.white, 1);
 
 draw_set_halign(fa_left);
 </string>
