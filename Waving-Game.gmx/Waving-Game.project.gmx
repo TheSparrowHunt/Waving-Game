@@ -41,6 +41,7 @@
     <sprite>sprites\sprite31</sprite>
     <sprite>sprites\spr_background5</sprite>
     <sprite>sprites\sprite30</sprite>
+    <sprite>sprites\spr_howto</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -65,6 +66,7 @@
       <object>objects\obj_settingsmanager</object>
     </objects>
     <object>objects\obj_test0</object>
+    <object>objects\obj_howtomanager</object>
     <objects name="control">
       <object>objects\obj_control</object>
       <object>objects\obj_singleton_creator</object>
@@ -91,6 +93,7 @@
   <rooms name="rooms">
     <room>rooms\blank</room>
     <room>rooms\menu</room>
+    <room>rooms\howto</room>
     <room>rooms\settings</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
