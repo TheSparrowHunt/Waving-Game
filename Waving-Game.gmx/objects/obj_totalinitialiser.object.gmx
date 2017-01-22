@@ -39,7 +39,7 @@ instance_create(x, y, obj_menutitlegenerator);
 instance_create(x, y, obj_menumanager);
 instance_create(x, y, obj_volumechange);
 
-global.debug = false;
+global.debug = true;
 
 </string>
           </argument>
