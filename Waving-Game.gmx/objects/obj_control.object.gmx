@@ -27,11 +27,16 @@
             <kind>1</kind>
             <string>global.btnUp = 0;
 global.btnDown = 0;
-global.btnnConfirm = 0;
+global.btnConfirm = 0;
 
 global.btnUpPressed = 0;
 global.btnDownPressed = 0;
 global.btnConfirmPressed = 0;
+
+global.menuup = 0;
+global.menudown = 0;
+global.menuleft = 0;
+global.menuright = 0;
 </string>
           </argument>
         </arguments>
@@ -79,14 +84,14 @@ else{
     global.btnConfirm = 0;
 }
 
-if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord('D') || gamepad_button_check_pressed(0, gp_padr))){
+if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord('D')) || gamepad_button_check_pressed(0, gp_padr)){
     global.btnUpPressed = 1;
 }
 else{
     global.btnUpPressed = 0;
 }
 
-if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord('A') || gamepad_button_check_pressed(0, gp_padl))){
+if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord('A')) || gamepad_button_check_pressed(0, gp_padl)){
     global.btnDownPressed = 1;
 }
 else{
@@ -100,7 +105,33 @@ else{
     global.btnConfirmedPressed = 0;
 }
 
+if (keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu) || keyboard_check_pressed(ord('W'))){
+    global.menuup = 1;
+}
+else{
+    global.menuup = 0;
+}
 
+if (keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(0, gp_padd) || keyboard_check_pressed(ord('S'))){
+    global.menudown = 1;
+}
+else{
+    global.menudown = 0;
+}
+
+if (keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(0, gp_padl) || keyboard_check_pressed(ord('A'))){
+    global.menuleft = 1;
+}
+else{
+    global.menuleft = 0;
+}
+
+if (keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(0, gp_padr) || keyboard_check_pressed(ord('D'))){
+    global.menuright = 1;
+}
+else{
+    global.menuright = 0;
+}
 </string>
           </argument>
         </arguments>

@@ -32,6 +32,7 @@ global.volume = 50;
 instance_create(x, y, obj_screenresizer);
 instance_create(x, y, obj_singleton_creator);
 instance_create(x, y, obj_menutitlegenerator);
+instance_create(x, y, obj_menumanager);
 
 
 </string>

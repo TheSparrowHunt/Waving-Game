@@ -55,6 +55,8 @@
       <object>objects\obj_titlee</object>
       <object>objects\obj_titlea</object>
       <object>objects\obj_titles</object>
+      <object>objects\obj_menutitlegenerator</object>
+      <object>objects\obj_menumanager</object>
     </objects>
     <object>objects\obj_test0</object>
     <objects name="control">
@@ -77,7 +79,6 @@
     </objects>
     <object>objects\obj_crowdmember</object>
     <object>objects\obj_crowdmanager</object>
-    <object>objects\obj_menutitlegenerator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\menu</room>
