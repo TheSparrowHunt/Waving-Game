@@ -36,13 +36,15 @@ counter = 0;
 colstate = 0;
 rand = 10+irandom(15);
 
-switch(irandom(4)){
+/*switch(irandom(4)){
     case 0: colour = global.purple; break;
     case 1: colour = global.pink; break;
     case 2: colour = global.blue; break;
     case 3: colour = global.teal; break;
     case 4: colour = global.green; break;
-}
+}*/
+
+colour = global.purple;
 
 
 </string>

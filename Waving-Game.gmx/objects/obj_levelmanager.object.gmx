@@ -32,8 +32,8 @@ oldwinningmapped = 0;
 
 bottomofbar = room_height-40;
 topofbar = 40;
-leftofbar = (room_width/2)+(room_width/3)+10;
-rightofbar = (room_width/2)+(room_width/3)+30;
+leftofbar = (room_width/2)+(room_width/3)+30;
+rightofbar = (room_width/2)+(room_width/3)+40;
 
 for ( i = 0; i &lt; 30; i++){
     previousscore[i] = 0;
