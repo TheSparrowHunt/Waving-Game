@@ -73,15 +73,19 @@
     </objects>
     <object>objects\obj_background</object>
     <object>objects\obj_win</object>
+    <objects name="utility">
+      <object>objects\obj_screenresizer</object>
+      <object>objects\obj_totalinitialiser</object>
+    </objects>
     <object>objects\obj_crowdmember</object>
     <object>objects\obj_crowdmanager</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\menu</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
     <room>rooms\room3</room>
-    <room>rooms\menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
