@@ -28,6 +28,9 @@
             <string>mood = 0;
 anim = 0;
 variance = random(1.0)-0.5;
+starty = y;
+counter = 0;
+movetick = 4+irandom(10);
 </string>
           </argument>
         </arguments>
@@ -54,11 +57,15 @@ variance = random(1.0)-0.5;
 
 if (mood &gt;= 0.5){
     anim = 1;
-
+    if (counter%movetick == 0){
+        y = starty+(irandom(4)-2);
+    }
 }
 else{
     anim = 0;
+    y = starty;
 }
+counter++;
 </string>
           </argument>
         </arguments>
