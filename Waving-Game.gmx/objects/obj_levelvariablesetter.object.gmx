@@ -29,23 +29,23 @@
 switch (room_get_name(room)){
     case "room0" : 
         global.range = 90-80; 
-        global.winthreshold = 250;
+        global.winthreshold = 240;
         break;
     case "room1" :
         global.range = 90-70;
-        global.winthreshold = 320;
+        global.winthreshold = 270;
         break;
     case "room2" :
         global.range = 90-60;
-        global.winthreshold = 350;
+        global.winthreshold = 300;
         break;
     case "room3" :
         global.range = 90-50;
-        global.winthreshold = 350;
+        global.winthreshold = 330;
         break;
     case "room4" : 
         global.range = 90-40;
-        global.winthreshold = 380;
+        global.winthreshold = 350;
 }
 
 instance_destroy();

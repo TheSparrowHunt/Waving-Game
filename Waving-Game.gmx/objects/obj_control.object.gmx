@@ -59,8 +59,16 @@ global.menuright = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_escape)){
-    game_end();
+            <string>if (global.debug = true){
+
+    if (keyboard_check_pressed(vk_escape)){
+        game_end();
+    }
+}
+else{
+    if (keyboard_check_pressed(vk_escape)){
+        room_goto(menu);
+    }
 }
 
 if (keyboard_check(vk_right) || keyboard_check(ord('D')) || gamepad_button_check(0, gp_padr) || gamepad_button_check(0, gp_shoulderrb)){
