@@ -128,6 +128,7 @@ if (state == 0){
         angle += deltaspeed;
     }
     else{
+        audio_play_sound(snd_lose, 2, false);
         global.gamestate = 1;
         state = 1;
     }

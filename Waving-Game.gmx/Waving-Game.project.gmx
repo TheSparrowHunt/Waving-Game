@@ -8,7 +8,6 @@
     <sound>sound\snd_menu_music</sound>
     <sound>sound\snd_game_music</sound>
     <sound>sound\snd_lose</sound>
-    <sound>sound\snd_win</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -49,6 +48,7 @@
     <sprite>sprites\spr_howto</sprite>
     <sprite>sprites\sprite32</sprite>
     <sprite>sprites\sprite33</sprite>
+    <sprite>sprites\sp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -90,6 +90,8 @@
     <object>objects\obj_win</object>
     <objects name="win">
       <object>objects\obj_100</object>
+      <object>objects\obj_aect</object>
+      <object>objects\obj_best</object>
       <object>objects\obj_completeroomcontrol</object>
     </objects>
     <objects name="utility">

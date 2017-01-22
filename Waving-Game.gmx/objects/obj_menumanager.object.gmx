@@ -29,10 +29,14 @@
 menusize = 3;
 
 if(audio_is_playing(snd_game_music)){
-    audio_sound_gain(snd_game_music, 0, 10);
+    audio_stop_sound(snd_game_music);
 }
 
-alarm[0] = 7;
+if (!audio_is_playing(snd_menu_music)){
+    audio_play_sound(snd_menu_music, 1, true);
+}
+
+//alarm[0] = 7;
 
 counter = 0;
 </string>
@@ -109,9 +113,9 @@ if (global.btnConfirmPressed == 1 &amp;&amp; counter &gt; 2){
     }
 }
 
-if(audio_is_playing(snd_game_music) &amp;&amp; audio_sound_get_gain(snd_game_music) &lt;= 0){
+/*if(audio_is_playing(snd_game_music) &amp;&amp; audio_sound_get_gain(snd_game_music) &lt;= 0){
     audio_stop_sound(snd_game_music);
-}
+}*/
 
 counter++;
 </string>

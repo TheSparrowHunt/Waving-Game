@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-8</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>for (i = 0; i &lt; 25; i++){
     instance_create(room_width/2, room_height/2, obj_100);
+    instance_create(room_width/2, room_height/2, obj_aect);
+    instance_create(room_width/2, room_height/2, obj_best);
 }
 counter = 0;
 </string>
@@ -53,8 +55,21 @@ counter = 0;
             <kind>1</kind>
             <string>if (global.btnConfirmPressed == 1 &amp;&amp; counter &gt; 2){
     room_goto(menu);
+    if (!audio_is_playing(snd_menu_music)){
+        audio_play_sound(snd_menu_music, 1, true);
+    }
 }
 counter++;
+
+if (instance_number(obj_100) &lt; 25){
+    instance_create(room_width/2, room_height/2, obj_100);
+}
+if (instance_number(obj_aect) &lt; 25){
+    instance_create(room_width/2, room_height/2, obj_aect);
+}
+if (instance_number(obj_best) &lt; 25){
+    instance_create(room_width/2, room_height/2, obj_best);
+}
 </string>
           </argument>
         </arguments>
