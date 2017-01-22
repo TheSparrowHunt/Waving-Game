@@ -31,13 +31,15 @@
     global.fullscreen = false;
     global.volume = 50;
     global.started = 1;
+    instance_create(x, y, obj_singleton_creator);
 }
 instance_create(x, y, obj_screenresizer);
-instance_create(x, y, obj_singleton_creator);
+
 instance_create(x, y, obj_menutitlegenerator);
 instance_create(x, y, obj_menumanager);
 instance_create(x, y, obj_volumechange);
 
+global.debug = false;
 
 </string>
           </argument>

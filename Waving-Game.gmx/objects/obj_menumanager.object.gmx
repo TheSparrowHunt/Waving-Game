@@ -33,6 +33,8 @@ if(audio_is_playing(snd_game_music)){
 }
 
 alarm[0] = 7;
+
+counter = 0;
 </string>
           </argument>
         </arguments>
@@ -58,6 +60,7 @@ alarm[0] = 7;
             <string>if (!audio_is_playing(snd_menu_music)){
     audio_play_sound(snd_menu_music, 1, true);
 }
+
 </string>
           </argument>
         </arguments>
@@ -97,7 +100,7 @@ else if (global.menuup == 1){
     }
 }
 
-if (global.btnConfirmPressed == 1){
+if (global.btnConfirmPressed == 1 &amp;&amp; counter &gt; 2){
     switch(menuposition){
         case 0: room_goto(room0); break;
         case 1: /*room_goto(howto);*/ break;
@@ -109,6 +112,8 @@ if (global.btnConfirmPressed == 1){
 if(audio_is_playing(snd_game_music) &amp;&amp; audio_sound_get_gain(snd_game_music) &lt;= 0){
     audio_stop_sound(snd_game_music);
 }
+
+counter++;
 </string>
           </argument>
         </arguments>

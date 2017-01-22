@@ -150,6 +150,9 @@ if (state == 0){
         }
         else{
             global.levelscore-=2;
+            if (global.levelscore &lt; 0){
+                global.levelscore = 0;
+            }
             global.winning = -1;
     }
     
@@ -204,6 +207,12 @@ image_angle = angle;
 }
 
 counter++;*/
+
+if (global.debug == true){
+    if (keyboard_check_pressed(ord('P'))){
+        global.levelscore = global.winthreshold;
+    }
+}
 </string>
           </argument>
         </arguments>
