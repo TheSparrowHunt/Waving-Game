@@ -13,20 +13,7 @@
     <sprite>sprites\bg_template</sprite>
     <sprite>sprites\spr_font</sprite>
     <sprite>sprites\spr_win</sprite>
-    <sprite>sprites\spr_title0</sprite>
-    <sprite>sprites\spr_title1</sprite>
-    <sprite>sprites\spr_title2</sprite>
-    <sprite>sprites\spr_title3</sprite>
-    <sprite>sprites\spr_title4</sprite>
-    <sprite>sprites\spr_title5</sprite>
-    <sprite>sprites\spr_title6</sprite>
-    <sprite>sprites\spr_title7</sprite>
-    <sprite>sprites\spr_title8</sprite>
-    <sprite>sprites\spr_title9</sprite>
-    <sprite>sprites\spr_title10</sprite>
     <sprite>sprites\spr_title11</sprite>
-    <sprite>sprites\spr_title12</sprite>
-    <sprite>sprites\spr_title13</sprite>
     <sprite>sprites\spr_title14</sprite>
     <sprite>sprites\spr_curtainleft</sprite>
     <sprite>sprites\spr_curtainright</sprite>
@@ -36,8 +23,21 @@
     <sprite>sprites\spr_background2</sprite>
     <sprite>sprites\spr_background3</sprite>
     <sprite>sprites\spr_background4</sprite>
+    <sprites name="title_letters">
+      <sprite>sprites\spr_title_c</sprite>
+      <sprite>sprites\spr_title_r</sprite>
+      <sprite>sprites\spr_title_o</sprite>
+      <sprite>sprites\spr_title_w</sprite>
+      <sprite>sprites\spr_title_d</sprite>
+      <sprite>sprites\spr_title_p</sprite>
+      <sprite>sprites\spr_title_l</sprite>
+      <sprite>sprites\spr_title_e</sprite>
+      <sprite>sprites\spr_title_a</sprite>
+      <sprite>sprites\spr_title_s</sprite>
+    </sprites>
     <sprite>sprites\sprite31</sprite>
     <sprite>sprites\spr_background5</sprite>
+    <sprite>sprites\sprite30</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -45,18 +45,16 @@
   <paths name="paths"/>
   <objects name="objects">
     <objects name="title">
-      <object>objects\obj_title0</object>
-      <object>objects\obj_title1</object>
-      <object>objects\obj_title2</object>
-      <object>objects\obj_title3</object>
-      <object>objects\obj_title4</object>
-      <object>objects\obj_title6</object>
-      <object>objects\obj_title7</object>
-      <object>objects\obj_title8</object>
-      <object>objects\obj_title9</object>
-      <object>objects\obj_title10</object>
-      <object>objects\obj_title11</object>
-      <object>objects\obj_title12</object>
+      <object>objects\obj_titlec</object>
+      <object>objects\obj_titler</object>
+      <object>objects\obj_titleo</object>
+      <object>objects\obj_titlew</object>
+      <object>objects\obj_titled</object>
+      <object>objects\obj_titlep</object>
+      <object>objects\obj_titlel</object>
+      <object>objects\obj_titlee</object>
+      <object>objects\obj_titlea</object>
+      <object>objects\obj_titles</object>
     </objects>
     <object>objects\obj_test0</object>
     <objects name="control">
@@ -79,6 +77,7 @@
     </objects>
     <object>objects\obj_crowdmember</object>
     <object>objects\obj_crowdmanager</object>
+    <object>objects\obj_menutitlegenerator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\menu</room>

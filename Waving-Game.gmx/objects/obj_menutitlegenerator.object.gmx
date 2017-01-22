@@ -25,15 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.module = "win";
-global.screenmultiplier = 3;
-global.fullscreen = false;
-global.volume = 50;
-instance_create(x, y, obj_screenresizer);
-instance_create(x, y, obj_singleton_creator);
-instance_create(x, y, obj_menutitlegenerator);
+            <string>instance_create(103, 11, obj_titlec);
+instance_create(126, 9, obj_titler);
+instance_create(145, 9, obj_titleo);
+instance_create(171, 8, obj_titlew);
+instance_create(201, 10, obj_titled);
 
+instance_create(85, 49, obj_titlep);
+instance_create(107, 52, obj_titlel);
+instance_create(123, 50, obj_titlee);
+instance_create(146, 51, obj_titlea);
+instance_create(171, 52, obj_titles);
+instance_create(194, 50, obj_titlee);
+instance_create(218, 48, obj_titler);
 
+instance_destroy();
 </string>
           </argument>
         </arguments>

@@ -63,7 +63,6 @@ else{
             <string>//window centering
 window_center();
 instance_destroy();
-room_goto(room0);
 </string>
           </argument>
         </arguments>
