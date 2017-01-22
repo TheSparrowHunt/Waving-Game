@@ -58,6 +58,9 @@
       <object>objects\obj_menutitlegenerator</object>
       <object>objects\obj_menumanager</object>
     </objects>
+    <objects name="settings">
+      <object>objects\obj_settingsmanager</object>
+    </objects>
     <object>objects\obj_test0</object>
     <objects name="control">
       <object>objects\obj_control</object>
@@ -76,12 +79,15 @@
     <objects name="utility">
       <object>objects\obj_screenresizer</object>
       <object>objects\obj_totalinitialiser</object>
+      <object>objects\obj_pretotalinitialiser</object>
     </objects>
     <object>objects\obj_crowdmember</object>
     <object>objects\obj_crowdmanager</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\blank</room>
     <room>rooms\menu</room>
+    <room>rooms\settings</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>

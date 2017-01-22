@@ -25,19 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.started == 0){
-    global.module = "win";
-    global.screenmultiplier = 3;
-    global.fullscreen = false;
-    global.volume = 50;
-    global.started = 1;
-}
-instance_create(x, y, obj_screenresizer);
-instance_create(x, y, obj_singleton_creator);
-instance_create(x, y, obj_menutitlegenerator);
-instance_create(x, y, obj_menumanager);
-
-
+            <string>global.started = 0;
+room_goto(menu);
 </string>
           </argument>
         </arguments>

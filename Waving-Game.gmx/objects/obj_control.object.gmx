@@ -102,7 +102,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || game
     global.btnConfirmPressed = 1;
 }
 else{
-    global.btnConfirmedPressed = 0;
+    global.btnConfirmPressed = 0;
 }
 
 if (keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu) || keyboard_check_pressed(ord('W'))){
